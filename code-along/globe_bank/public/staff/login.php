@@ -35,4 +35,4 @@ if(is_post_request()) {//checks if it is post request if it is process the infor
 
 </div>
 
-<?php include(SHARED_PATH . '/staff_footer.php'); ?>
+<?php include(SHARED_PATH . '/staff_footer.php');//staff footer ?>
