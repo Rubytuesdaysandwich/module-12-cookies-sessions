@@ -17,6 +17,8 @@ if (!isset($page_title)){$page_title='staff Area';}
 </header>   
 <navigation>
     <ul>
+      <li>user:<?php echo $_SESSION['username']??'';?></li><!--show who the current logged in person is for the session-->
         <li> <a href =" <?php echo url_for('/staff/index.php');//for menu button in the header?>">Menu</a></li>
+        <li> <a href =" <?php echo url_for('/staff/logout.php');//for logout button in the header?>">Logout</a></li>
     </ul>
 </navigation>
