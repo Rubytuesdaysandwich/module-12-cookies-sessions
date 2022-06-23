@@ -4,7 +4,9 @@ require_once('../private/initialize.php');
     if (!isset($investment)) { $investment = ''; } 
     if (!isset($interest_rate)) { $interest_rate = ''; } 
     if (!isset($years)) { $years = ''; } 
-?> 
+    
+    ?> 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +17,7 @@ require_once('../private/initialize.php');
 <body>
 <?php
 
-$expires_time = time()+60*60*24*2;//* note to self number of seconds since 1970
+//$expires_time = time()+60*60*24*2;//* note to self number of seconds since 1970
 // if(is_post_request()){
     //!moved to display.php
     // //tracking if form is submitted
@@ -27,12 +29,13 @@ $expires_time = time()+60*60*24*2;//* note to self number of seconds since 1970
     //     setcookie('interest_rate',$interest_rate,$expires_time,"/");
     //     setcookie('years',$years,$expires_time,"/");
     // }
-    if(is_get_request()){
-
+  
+        
         $investment= $_COOKIE['investment'] ??'';
         $interest_rate= $_COOKIE['interest_rate'] ??'';
         $years= $_COOKIE['years'] ??'';
-    }
+    
+
     var_dump($years);
     var_dump($interest_rate);
     var_dump($investment);

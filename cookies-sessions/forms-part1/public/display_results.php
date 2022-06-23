@@ -4,41 +4,29 @@ require_once('../private/initialize.php');
 $investment=0;
 $interest_rate=0;
 $years=0;
-var_dump($years);
-   if(isset($_POST['investment'])||isset($_POST['interest_rate'])||isset($_POST['years'])) 
+   if(isset($_POST['investment'])||isset($_POST['interest_rate'])||isset($_POST['years'])) //define the index of $_POST
    {
-    $investment = $_POST["investment"];
-    $interest_rate = $_POST["interest_rate"];
-    $years = $_POST["years"];
+    $investment = $_POST["investment"];//define $_POST global variable 
+    $interest_rate = $_POST["interest_rate"];//define $_POST global variable 
+    $years = $_POST["years"];//define $_POST global variable 
    }
-   var_dump($years);
 //isset($_POST['investment']) ? $_POST['investment']:'';
     // get the data from the form
-    
     $expires_time = time()+60*60*24*2;//* note to self number of seconds since 1970
     if(is_post_request()){
-
-   
         //tracking if form is submitted
             $investment=$_POST['investment'] ?? '';
             $interest_rate=$_POST['interest_rate']??'';
             $years=$_POST['years']??'';
-            $expires_time;
-            setcookie('investment',$investment,$expires_time,"/");
-            setcookie('interest_rate',$interest_rate,$expires_time,"/");
-            setcookie('years',$years,$expires_time,"/");
+            //$expires_time;
+            setcookie('investment',$investment,$expires_time,"/");//setcookies
+            setcookie('interest_rate',$interest_rate,$expires_time,"/");//setcookies
+            setcookie('years',$years,$expires_time,"/");//setcookies
         }else{
             $investment=$_COOKIE['investment'] ??'';
             $interest_rate=$_COOKIE['interest_rate'] ??'';
             $years=$_COOKIE['years'] ??'';
-
         }
-        var_dump($years);
-        var_dump($interest_rate);
-        var_dump($investment);
-
-
-
    
     // validate investment inputs here
     $error_message="";
