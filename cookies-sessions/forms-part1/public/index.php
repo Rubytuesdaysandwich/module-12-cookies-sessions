@@ -14,44 +14,30 @@ require_once('../private/initialize.php');
 
 <body>
 <?php
+
 $expires_time = time()+60*60*24*2;//* note to self number of seconds since 1970
-if(is_post_request()){
-    //tracking if form is submitted
-    $investment=$_POST['investment'] ?? '';
-    $expires_time;
-    setcookie($investment,'investment',$expires_time,"../public/index.php",null,1,1,);
-    //setcookie($interest_rate,'interest_rate',$expires_time,"../public/index.php",null,1,1,);
-    //setcookie($years,'years',$expires_time,"../public/index.php",null,1,1,);
-}else{
-    $investment=$_COOKIE['investment'] ??'none';
-}
+// if(is_post_request()){
+    //!moved to display.php
+    // //tracking if form is submitted
+    //     $investment=$_POST['investment'] ?? '0';
+    //     $interest_rate=$_POST['interest_rate']??'0';
+    //     $years=$POST['years']??'0';
+    //     $expires_time;
+    //     setcookie('investment',$investment,$expires_time,"/");
+    //     setcookie('interest_rate',$interest_rate,$expires_time,"/");
+    //     setcookie('years',$years,$expires_time,"/");
+    // }
+    if(is_get_request()){
 
-
-
-
-
-
-
-
-
-
-
+        $investment= $_COOKIE['investment'] ??'';
+        $interest_rate= $_COOKIE['interest_rate'] ??'';
+        $years= $_COOKIE['years'] ??'';
+    }
+    var_dump($years);
+    var_dump($interest_rate);
+    var_dump($investment);
+    
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <main>
     <h1>Future Value Calculator</h1>
