@@ -13,6 +13,46 @@ require_once('../private/initialize.php');
 </head>
 
 <body>
+<?php
+$expires_time = time()+60*60*24*2;//* note to self number of seconds since 1970
+if(is_post_request()){
+    //tracking if form is submitted
+    $investment=$_POST['investment'] ?? '';
+    $expires_time;
+    setcookie($investment,'investment',$expires_time,"../public/index.php",null,1,1,);
+    //setcookie($interest_rate,'interest_rate',$expires_time,"../public/index.php",null,1,1,);
+    //setcookie($years,'years',$expires_time,"../public/index.php",null,1,1,);
+}else{
+    $investment=$_COOKIE['investment'] ??'none';
+}
+
+
+
+
+
+
+
+
+
+
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <main>
     <h1>Future Value Calculator</h1>
     <?php if (!empty($error_message)) { ?>
