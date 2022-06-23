@@ -1,7 +1,6 @@
 <?php
 require_once('../private/initialize.php');
-    expires()+60;
-    setcookie($investment,);
+    
 
     // get the data from the form
     $investment = $_POST["investment"];
