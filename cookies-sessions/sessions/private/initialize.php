@@ -2,7 +2,7 @@
 
 //use ob_start() when code may be ported to other servers. Do not depend on the output buffering in the php.ini file.
 ob_start();//output buffering is turned on
-//todo session_start(); 
+session_start(); 
 
 //require_once('cookies.php');//cookies and sessions
 require_once('functions.php');//getting the functions from the functions page

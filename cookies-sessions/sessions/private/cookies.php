@@ -10,14 +10,14 @@
 //    $investment = isset($_COOKIE['investment']) ? $_COOKIE['investment']:'';
 //    $interest_rate = isset($_COOKIE['interest_rate']) ? $_COOKIE['interest_rate']:'';
 //    $years = isset($_COOKIE['years']) ? $_COOKIE['years']:'';
-
-if (isset($_SERVER['HTTP_COOKIE'])) {
-    $cookies = explode(';', $_SERVER['HTTP_COOKIE']);
-    foreach($cookies as $cookie) {
-        $parts = explode('=', $cookie);
-        $name = trim($parts[0]);
-        setcookie($name, '', time()-1000);
-        setcookie($name, '', time()-1000, '/');
-    }
-}
+//!debug for cookies
+// if (isset($_SERVER['HTTP_COOKIE'])) {
+//     $cookies = explode(';', $_SERVER['HTTP_COOKIE']);
+//     foreach($cookies as $cookie) {
+//         $parts = explode('=', $cookie);
+//         $name = trim($parts[0]);
+//         setcookie($name, '', time()-1000);
+//         setcookie($name, '', time()-1000, '/');
+//     }
+// }
     ?> -->
