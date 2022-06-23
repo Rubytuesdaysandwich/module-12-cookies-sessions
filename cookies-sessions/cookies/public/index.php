@@ -36,9 +36,7 @@ require_once('../private/initialize.php');
         $years= $_COOKIE['years'] ??'';
     
 
-    var_dump($years);
-    var_dump($interest_rate);
-    var_dump($investment);
+   
     
 ?>
 

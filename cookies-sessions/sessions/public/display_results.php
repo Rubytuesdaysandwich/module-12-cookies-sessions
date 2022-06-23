@@ -12,22 +12,25 @@ $years=0;
    }
 //isset($_POST['investment']) ? $_POST['investment']:'';
     // get the data from the form
-    $expires_time = time()+60*60*24*2;//* note to self number of seconds since 1970
+    //$expires_time = time()+60*60*24*2;//* note to self number of seconds since 1970
     if(is_post_request()){
         //tracking if form is submitted
             $investment=$_POST['investment'] ?? '';
             $interest_rate=$_POST['interest_rate']??'';
             $years=$_POST['years']??'';
-            //$expires_time;
-            setcookie('investment',$investment,$expires_time,"/");//setcookies
-            setcookie('interest_rate',$interest_rate,$expires_time,"/");//setcookies
-            setcookie('years',$years,$expires_time,"/");//setcookies
+            //if it is a post request this will get value for the session
+            $_SESSION['investment'] =$investment;
+            $_SESSION['interest_rate'] =$interest_rate;
+            $_SESSION['years'] =$years;
+
         }else{
-            $investment=$_COOKIE['investment'] ??'';
-            $interest_rate=$_COOKIE['interest_rate'] ??'';
-            $years=$_COOKIE['years'] ??'';
+            //if not postrequest it will output them
+            $investment=$_SESSION['investment'] ??'';
+            $interest_rate=$_SESSION['interest_rate'] ??'';
+            $years=$_SESSION['years'] ??'';
         }
-   
+  
+
     // validate investment inputs here
     $error_message="";
     if(is_post_request()){

@@ -29,17 +29,16 @@ require_once('../private/initialize.php');
     //     setcookie('interest_rate',$interest_rate,$expires_time,"/");
     //     setcookie('years',$years,$expires_time,"/");
     // }
-  
-        
-        $investment= $_COOKIE['investment'] ??'';
-        $interest_rate= $_COOKIE['interest_rate'] ??'';
-        $years= $_COOKIE['years'] ??'';
-    
 
-    var_dump($years);
-    var_dump($interest_rate);
-    var_dump($investment);
-    
+    if(is_get_request()){//if it is a get request then this will put the previous values into the form.
+
+        $investment= $_SESSION['investment'] ??'';
+        $interest_rate= $_SESSION['interest_rate'] ??'';
+        $years= $_SESSION['years'] ??'';
+
+
+    }
+
 ?>
 
     <main>
