@@ -29,7 +29,7 @@ require_once('query_functions.php');//calling query_functions
 require_once('validation_functions.php');//calling validation_functions
 
 
-$db=db_connect();
-$errors = [];
+$db=db_connect();//connect to the mysqli database
+$errors = [];//output errors
 
 ?>

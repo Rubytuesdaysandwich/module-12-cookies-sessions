@@ -6,5 +6,5 @@
 </html>
 
 <?php
-db_disconnect($db);
+db_disconnect($db);//disconnect from the database mysqli
 ?>

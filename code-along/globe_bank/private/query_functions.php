@@ -2,10 +2,10 @@
 
   // Subjects
 
-  function find_all_subjects() {
+  function find_all_subjects() {//find all subjects from subjects database
     global $db;
 
-    $sql = "SELECT * FROM subjects ";
+    $sql = "SELECT * FROM subjects ";//select subjects
     $sql .= "ORDER BY position ASC";
     //echo $sql;
     $result = mysqli_query($db, $sql);
@@ -13,7 +13,7 @@
     return $result;
   }
 
-  function find_subject_by_id($id) {
+  function find_subject_by_id($id) {// find a subject by id
     global $db;
 
     $sql = "SELECT * FROM subjects ";
@@ -55,15 +55,15 @@
     return $errors;
   }
 
-  function insert_subject($subject) {
+  function insert_subject($subject) {//validate subject
     global $db;
 
     $errors = validate_subject($subject);
-    if(!empty($errors)){
+    if(!empty($errors)){//if not empty return errors
         return $errors;
     }
 
-    $sql = "INSERT INTO subjects ";
+    $sql = "INSERT INTO subjects ";//insert into subjects
     $sql .= "(menu_name, position, visible) ";
     $sql .= "VALUES (";
     $sql .= "'" . $subject['menu_name'] . "',";
@@ -82,15 +82,15 @@
     }
   }
 
-  function update_subject($subject) {
+  function update_subject($subject) {//update the subject
     global $db;
 
     $errors = validate_subject($subject);
-    if(!empty($errors)){
+    if(!empty($errors)){//validate if empty if not empty return errors
         return $errors;
     }
 
-    $sql = "UPDATE subjects SET ";
+    $sql = "UPDATE subjects SET ";//update subjects
     $sql .= "menu_name='" . $subject['menu_name'] . "', ";
     $sql .= "position='" . $subject['position'] . "', ";
     $sql .= "visible='" . $subject['visible'] . "' ";
@@ -110,10 +110,10 @@
 
   }
 
-  function delete_subject($id) {
+  function delete_subject($id) {//delete subject
     global $db;
 
-    $sql = "DELETE FROM subjects ";
+    $sql = "DELETE FROM subjects ";//delete from subjects
     $sql .= "WHERE id='" . $id . "' ";
     $sql .= "LIMIT 1";
     $result = mysqli_query($db, $sql);
@@ -131,7 +131,7 @@
 
   // Pages
 
-  function find_all_pages() {
+  function find_all_pages() {//find all pages
     global $db;
 
     $sql = "SELECT * FROM pages ";
@@ -141,7 +141,7 @@
     return $result;
   }
 
-  function find_page_by_id($id) {
+  function find_page_by_id($id) {//find page by the id
     global $db;
 
     $sql = "SELECT * FROM pages ";
@@ -153,7 +153,7 @@
     return $page; // returns an assoc. array
   }
 
-  function insert_page($page) {
+  function insert_page($page) {//insert into database
     global $db;
 
     $sql = "INSERT INTO pages ";
@@ -177,10 +177,10 @@
     }
   }
 
-  function update_page($page) {
+  function update_page($page) {//update database
     global $db;
 
-    $sql = "UPDATE pages SET ";
+    $sql = "UPDATE pages SET ";//update pages
     $sql .= "subject_id='" . $page['subject_id'] . "', ";
     $sql .= "menu_name='" . $page['menu_name'] . "', ";
     $sql .= "position='" . $page['position'] . "', ";
@@ -202,7 +202,7 @@
 
   }
 
-  function delete_page($id) {
+  function delete_page($id) {//delete pages
     global $db;
 
     $sql = "DELETE FROM pages ";
